@@ -53,6 +53,9 @@ export default function App() {
     setInput(g.fullName);
     setOpen(false);
     setResult(`TABLE ${g.tableNumber} ${g.textNumber}`);
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
   };
 
   const handleSubmit = (e) => {
@@ -80,9 +83,7 @@ export default function App() {
     if (chosen) {
       choose(chosen);
     }
-    if (inputRef.current) {
-      inputRef.current.blur();
-    }
+
   };
 
   const onKeyDown = (e) => {
@@ -128,7 +129,10 @@ export default function App() {
             >FIND YOUR TABLE</h1>
 
             <div style={{ position: "relative" }}>
-              <TextField id="outlined-basic" label="Your name" variant="outlined"
+              <TextField 
+                id="outlined-basic" 
+                label="Your name" 
+                variant="outlined"
                 inputRef={inputRef}
                 value={input}
                 onChange={(e) => {
