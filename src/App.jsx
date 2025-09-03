@@ -53,7 +53,7 @@ export default function App() {
     setInput(g.fullName);
     setOpen(false);
     setResult(`TABLE ${g.tableNumber} ${g.textNumber}`);
-    // inputRef.current.blur();
+    inputRef.current.blur();
   };
 
   const handleSubmit = (e) => {
