@@ -1,8 +1,6 @@
-import React, { useMemo, useState, useRef, useEffect } from "react";
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
+import TextField from '@mui/material/TextField';
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { guestData } from "./guests";
 
 
@@ -55,10 +53,7 @@ export default function App() {
     setInput(g.fullName);
     setOpen(false);
     setResult(`TABLE ${g.tableNumber} ${g.textNumber}`);
-  
-    if (inputRef.current) {
-      inputRef.current.blur();
-    }
+    inputRef.current.blur();
   };
 
   const handleSubmit = (e) => {
@@ -90,6 +85,10 @@ export default function App() {
     }
 
     setResult("Guest not found");
+
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
   };
 
   const onKeyDown = (e) => {
@@ -115,27 +114,28 @@ export default function App() {
     <div className='container'>
       
       <Box sx={{ minWidth: 275 }}>
-        {/* <Card variant="outlined"> */}
 
           <form
             onSubmit={handleSubmit}
             style={{ 
-              padding: 20, 
+              padding: '0px 20px 100px', 
               fontFamily: "sans-serif", 
               maxWidth: 520, 
               position: "relative",
-              // border: '1px solid red',
-              // width: '100%'
-              height: '50vh'
+              height: '60%',
             }}
             ref={wrapperRef}
           >
             <h1 className='font'
-            style={{textAlign:'center'}}
+            style={{
+              textAlign:'center',
+              marginTop: 0
+            }}
             >FIND YOUR TABLE</h1>
 
             <div style={{ position: "relative" }}>
               <TextField id="outlined-basic" label="Your name" variant="outlined"
+                ref={inputRef}
                 value={input}
                 onChange={(e) => {
                   setInput(e.target.value);
@@ -153,16 +153,15 @@ export default function App() {
                     fontSize: '1.5rem'
                   },
                   "& .MuiInputLabel-root": {
-                    fontFamily: "Cormorant Garamond", // label font
+                    fontFamily: "Cormorant Garamond",
                     fontSize: '1.5rem'
                   },
                   "& .MuiInputLabel-root.MuiInputLabel-shrink": {
                     transform: "translate(14px, -14px) scale(0.75)", 
-                    // adjust Y if it looks off, e.g. -12px for taller fonts
                   },
                   "& .MuiOutlinedInput-root": {
                     "& legend": {
-                      fontSize: "1rem", // controls the notch label size
+                      fontSize: "1rem",
                     },
                   },
                 }}
@@ -228,7 +227,6 @@ export default function App() {
             >{result}
             </h3>}
           </form>
-        {/* </Card> */}
       </Box>
     </div>
   );
