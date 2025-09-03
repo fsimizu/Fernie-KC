@@ -3,6 +3,7 @@ export const guestData = [
       tableNumber: 1,
       textNumber: 'ONE',
       guests: [
+        // 13 guests
         { name: "Virgilio Ranay" },
         { name: "Zarina Ranay" },
         { name: "Sarah Ranay" },
@@ -22,6 +23,7 @@ export const guestData = [
       tableNumber: 2,
       textNumber: 'TWO',
       guests: [
+        // 10 guests
         { name: "Aaron Phuong" },
         { name: "Borja Lorenzo" },
         { name: "Fatemeh Hajiloo" },
@@ -38,6 +40,7 @@ export const guestData = [
       tableNumber: 3,
       textNumber: 'THREE',
       guests: [
+        // 11 guests
         { name: "Hector Simizu" },
         { name: "Luisa Kurata" },
         { name: "Juan Morozumi" },
@@ -48,12 +51,14 @@ export const guestData = [
         { name: "Jonatan Jardi" },
         { name: "Olivia Jardi" },
         { name: "Saori Simizu" },
+        { name: "Ezequiel Simizu" },
       ],
     },
     {
       tableNumber: 4,
       textNumber: 'FOUR',
       guests: [
+        // 20 guests
         { name: "Aida Gholami" },
         { name: "Atiyeh Zarifi" },
         { name: "Carolina Souza" },
@@ -64,6 +69,17 @@ export const guestData = [
         { name: "Handry Lukito" },
         { name: "Ignacio Otero" },
         { name: "Margarita Giarratano" },
+        { name: "Mehdi Kavousian" },
+        { name: "Sasha Chen" },
+        { name: "Matthew Fletcher" },
+        { name: "Sandra Castillo" },
+        { name: "Sebastiao Rocha" },
+        { name: "Senopati Hardjowijono" },
+        { name: "Therese Pokorny" },
+        { name: "Vanessa Quiroga" },
+        { name: "Victoria Santos" },
+        { name: "Vuong My Trinh" },
+
       ],
     },
   ];
