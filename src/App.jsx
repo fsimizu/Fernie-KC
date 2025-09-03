@@ -121,13 +121,13 @@ export default function App() {
               position: "relative",
               // border: '1px solid red',
               // width: '100%'
-              height: '45vh'
+              height: '50vh'
             }}
             ref={wrapperRef}
           >
-            <h2 className='font'
+            <h1 className='font'
             style={{textAlign:'center'}}
-            >FIND YOUR TABLE</h2>
+            >FIND YOUR TABLE</h1>
 
             <div style={{ position: "relative" }}>
               <TextField id="outlined-basic" label="Your name" variant="outlined"
@@ -145,9 +145,20 @@ export default function App() {
                   width: "100%",
                   "& .MuiInputBase-input": {
                     fontFamily: "Cormorant Garamond",
+                    fontSize: '1.5rem'
                   },
                   "& .MuiInputLabel-root": {
                     fontFamily: "Cormorant Garamond", // label font
+                    fontSize: '1.5rem'
+                  },
+                  "& .MuiInputLabel-root.MuiInputLabel-shrink": {
+                    transform: "translate(14px, -14px) scale(0.75)", 
+                    // adjust Y if it looks off, e.g. -12px for taller fonts
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& legend": {
+                      fontSize: "1rem", // controls the notch label size
+                    },
                   },
                 }}
               />
@@ -193,6 +204,7 @@ export default function App() {
                         display: "flex",
                         justifyContent: "space-between",
                         gap: 8,
+                        fontSize: '1.5rem'
                       }}
                     >
                       <span>{m.fullName}</span>
@@ -204,7 +216,11 @@ export default function App() {
             </div>
 
             {result && <h3 
-            className='font' style={{ marginTop: 12, textAlign:'center' }}>{result}
+            className='font' 
+            style={{ marginTop: 12, textAlign:'center', 
+              fontSize: '1.5rem'
+            }}
+            >{result}
             </h3>}
           </form>
         {/* </Card> */}
