@@ -53,39 +53,33 @@ export default function App() {
     setInput(g.fullName);
     setOpen(false);
     setResult(`TABLE ${g.tableNumber} ${g.textNumber}`);
-    inputRef.current.blur();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setResult("");
 
-    if (input.trim() === "") {
+    const q = input.trim();
+    let chosen = null;
+
+    if (q === "") {
       setResult("Please enter your name.");
-      return;
+    } else {
+      const exact = flatGuests.find((g) => norm(g.fullName) === norm(q));
+      if (exact) {
+        chosen = exact;
+      } else if (matches.length === 1) {
+        chosen = matches[0];
+      } else if (matches.length > 1) {
+        setOpen(true);
+        setResult("Multiple matches found — please select your full name.");
+      } else {
+        setResult("Guest not found");
+      }
     }
-
-    const exact = flatGuests.find(
-      (g) => norm(g.fullName) === norm(input.trim())
-    );
-    if (exact) {
-      choose(exact);
-      return;
+    if (chosen) {
+      choose(chosen);
     }
-
-    if (matches.length === 1) {
-      choose(matches[0]);
-      return;
-    }
-
-    if (matches.length > 1) {
-      setOpen(true);
-      setResult("Multiple matches found — please select your full name.");
-      return;
-    }
-
-    setResult("Guest not found");
-
     if (inputRef.current) {
       inputRef.current.blur();
     }
@@ -135,7 +129,7 @@ export default function App() {
 
             <div style={{ position: "relative" }}>
               <TextField id="outlined-basic" label="Your name" variant="outlined"
-                ref={inputRef}
+                inputRef={inputRef}
                 value={input}
                 onChange={(e) => {
                   setInput(e.target.value);
