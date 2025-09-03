@@ -36,7 +36,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.8em;
   line-height: 1.1;
 }
 
@@ -86,15 +86,31 @@ button:focus-visible {
 }
 
 .font {
-  font-family: "Cormorant Garamond", serif ;
+  font-family: "Cormorant Garamond", serif;
 }
+
 .parisienne-regular {
   font-family: "Parisienne", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
 .alex-brush-regular {
   font-family: "Alex Brush", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+@media (max-width: 375px) {
+  h1.alex-brush-regular {
+    font-size: 2.4em;
+  }
+}
+
+@media (max-width: 420px) {
+  h1.font {
+    font-size: 1.9em;
+    letter-spacing: 0.05
+  }
+
 }

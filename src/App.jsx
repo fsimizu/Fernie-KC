@@ -124,14 +124,15 @@ export default function App() {
               // color: '#7a8e84',
               textAlign: 'center',
               marginTop: 0,
-              marginBottom: 8
+              marginBottom: 8,
             }}
           >Fernando & Karla</h1>
 
           <h1 className='font'
             style={{
               textAlign: 'center',
-              marginTop: 0
+              marginTop: 0,
+              letterSpacing: '0.0001em'
             }}
           >FIND YOUR TABLE</h1>
 
