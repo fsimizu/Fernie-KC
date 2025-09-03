@@ -121,6 +121,15 @@ export default function App() {
             }}
             ref={wrapperRef}
           >
+            <h1 className='parisienne-regular'
+            style={{
+              color: '#d19f61',
+              textAlign:'center',
+              marginTop: 0,
+              marginBottom: 8
+            }}
+            >Fernando & Karla</h1>
+
             <h1 className='font'
             style={{
               textAlign:'center',

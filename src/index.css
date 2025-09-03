@@ -88,3 +88,8 @@ button:focus-visible {
 .font {
   font-family: "Cormorant Garamond", serif ;
 }
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
