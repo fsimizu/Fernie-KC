@@ -11,6 +11,7 @@ export default function App() {
   const [result, setResult] = useState("");
   const [open, setOpen] = useState(false);
   const [highlight, setHighlight] = useState(0);
+  const inputRef = useRef(null); 
 
   // Flatten once for simpler matching
   const flatGuests = useMemo(
@@ -54,6 +55,10 @@ export default function App() {
     setInput(g.fullName);
     setOpen(false);
     setResult(`TABLE ${g.tableNumber} ${g.textNumber}`);
+  
+    if (inputRef.current) {
+      inputRef.current.blur();
+    }
   };
 
   const handleSubmit = (e) => {
