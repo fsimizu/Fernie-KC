@@ -68,7 +68,7 @@ export const guestData = [
         { name: "Gerson Brito" },
         { name: "Handry Lukito" },
         { name: "Ignacio Otero" },
-        { name: "Margarita Giarratano" },
+        { name: "Margherita Giarratano" },
         { name: "Mehdi Kavousian" },
         { name: "Sasha Chen" },
         { name: "Matthew Fletcher" },
